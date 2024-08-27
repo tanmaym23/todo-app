@@ -1,0 +1,72 @@
+/* Container for the form */
+.task-form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e1e1;
+}
+
+/* Form heading */
+.task-form-container h2 {
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form element styling */
+.task-form-container label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.task-form-container input[type="text"],
+.task-form-container input[type="date"],
+.task-form-container select,
+.task-form-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #333;
+}
+
+.task-form-container textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.task-form-container button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  width: 100%;
+}
+
+.task-form-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-form-container {
+    padding: 1rem;
+  }
+}

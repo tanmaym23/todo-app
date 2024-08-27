@@ -1,0 +1,64 @@
+<div>
+    <button (click)="sortTasks('dueDate')">Sort by Due Date</button>
+    <button (click)="sortTasks('priority')">Sort by Priority</button>
+    <button (click)="sortTasks('status')">Sort by Status</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks$ | async">
+        <td *ngIf="!editingTask || editingTask.id !== task.id">{{ task.title }}</td>
+        <td *ngIf="editingTask && editingTask.id === task.id">
+          <input [(ngModel)]="editingTask.title" />
+        </td>
+  
+        <td *ngIf="!editingTask || editingTask.id !== task.id">{{ task.description }}</td>
+        <td *ngIf="editingTask && editingTask.id === task.id">
+          <input [(ngModel)]="editingTask.description" />
+        </td>
+  
+        <td *ngIf="!editingTask || editingTask.id !== task.id">{{ task.dueDate }}</td>
+        <td *ngIf="editingTask && editingTask.id === task.id">
+          <input type="date" [(ngModel)]="editingTask.dueDate" />
+        </td>
+  
+        <td *ngIf="!editingTask || editingTask.id !== task.id">{{ task.priority }}</td>
+        <td *ngIf="editingTask && editingTask.id === task.id">
+          <select [(ngModel)]="editingTask.priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </td>
+  
+        <td *ngIf="!editingTask || editingTask.id !== task.id">{{ task.status }}</td>
+        <td *ngIf="editingTask && editingTask.id === task.id">
+          <select [(ngModel)]="editingTask.status">
+            <option value="to-do">To Do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </td>
+  
+        <td>
+          <button *ngIf="editingTask && editingTask.id === task.id" (click)="saveTask()">Save</button>
+          <button *ngIf="editingTask && editingTask.id === task.id" (click)="cancelEdit()">Cancel</button>
+          <button *ngIf="!editingTask || editingTask.id !== task.id" (click)="editTask(task)">Edit</button>
+          <button *ngIf="!editingTask || editingTask.id !== task.id" (click)="deleteTask(task.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button (click)="exportTasksToCSV()">Export to CSV</button>
+  

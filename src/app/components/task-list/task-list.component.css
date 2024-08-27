@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Light gray background for the entire app */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the task list */
+  .task-list-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff; /* White background for the main container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sort options styling */
+  .sort-options {
+    margin-bottom: 2rem; /* Increased spacing below sort options */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0; /* Light border under sort options */
+    padding-bottom: 1rem;
+  }
+  
+  .sort-options label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .sort-options select {
+    padding: 0.5rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fafafa; /* Light background for dropdown */
+  }
+  
+  /* Task item styling */
+  .task-list-item {
+    background-color: #ffffff; /* White background for each task item */
+    border: 1px solid #e1e1e1; /* Light border around each task item */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem; /* Increased spacing between items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .task-list-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Title styling with border */
+  .task-list-item h3 {
+    margin: 0 0 1rem; /* Spacing below the task title */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #007bff; /* Blue border below title */
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Description styling */
+  .task-list-item p {
+    margin: 0 0 1rem; /* Spacing below task description */
+    color: #666;
+    font-size: 1rem;
+    border-bottom: 1px solid #e1e1e1; /* Light border below description */
+    padding-bottom: 1rem;
+  }
+  
+  /* Actions styling */
+  .task-list-item .task-actions {
+    display: flex;
+    gap: 1rem; /* Spacing between action buttons */
+    margin-top: 1rem;
+  }
+  
+  /* Action buttons styling */
+  .task-list-item button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .task-list-item button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .task-list-container {
+      padding: 1rem;
+    }
+  
+    .task-list-item {
+      padding: 1rem;
+    }
+  }
+  
